@@ -1,0 +1,68 @@
+@import "../../mixins";
+@import "../../variables";
+
+.sidebar {
+  &.show {
+    left: 0 !important;
+  }
+
+  @media screen and (max-width: 1100px) {
+    position: absolute;
+    z-index: 3;
+    left: -$sidebar-width;
+  }
+
+  @media screen and (min-width: 1100px) {
+    left: 0;
+  }
+
+  transition: .5s left;
+  background-color: #1e2c3c;
+  width: $sidebar-width;
+  height: 100%;
+
+  &__logo {
+    width: 80%;
+    height: 50px;
+
+    img {
+      width: 25px;
+      height: 40px;
+      left: 0;
+    }
+
+    span {
+      @include font-size(26px);
+      color: #af582f;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-top: 36px;
+    color: #9cabbe;
+
+    &-item {
+      @include alignCenter;
+      @include font-size(13px);
+      cursor: pointer;
+      height: 54px;
+      text-transform: uppercase;
+      padding-left: 20px;
+      border-bottom: 1px solid #2e3b4c;
+
+      &:first-child {
+        border-top: 1px solid #2e3b4c;
+      }
+
+      i {
+        @include font-size(16px);
+      }
+
+      span {
+        font-weight: 600;
+        margin-left: 12px;
+      }
+    }
+  }
+}

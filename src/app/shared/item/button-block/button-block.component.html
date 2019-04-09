@@ -1,0 +1,13 @@
+<div class="button-block">
+  <button class="button-block__btn"
+          [ngStyle]="{'border-radius': radius + 'px'}"
+          [ngClass]="{
+            'button-block__btn_details': isDetails(),
+            'button-block__btn_pre': isPre(),
+            'button-block__btn_completed': isCompleted()
+          }">
+    <span *ngIf="isDetails()">more details</span>
+    <span *ngIf="isPre()">pre-subscribe</span>
+    <span *ngIf="isCompleted()">Add me to waiting list</span>
+  </button>
+</div>

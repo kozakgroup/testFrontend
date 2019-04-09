@@ -1,0 +1,41 @@
+<div class="big-item d-flex">
+  <img src="../../../assets/big-house.jpg" class="big-item__image" />
+  <div class="big-item__content">
+    <div class="big-item__content-header d-flex flex-column justify-content-center pt-1">
+      <h4 class="m-0">{{ data.name }}</h4>
+      <span>{{ data.location.city + ', ' + data.location.canton }}</span>
+    </div>
+    <div class="big-item__content-invest-block-wrapper">
+      <app-invest-block [progress]="data.progress" [available]="data.available_to_invest"></app-invest-block>
+    </div>
+    <div class="big-item__content-info d-flex flex-wrap justify-content-between">
+      <div class="big-item__content-info-item">
+        <span>Purchase cost</span>
+        <span>CHF {{ data.purchase_price | million }}</span>
+      </div>
+      <div class="big-item__content-info-item">
+        <span>Mortgage(LTV)</span>
+        <span>{{ data.loan_to_value }}%</span>
+      </div>
+      <div class="big-item__content-info-item">
+        <span>Min. Investment</span>
+        <span>CHF {{ data.minimum_investment | million }}</span>
+      </div>
+      <div class="big-item__content-info-item">
+        <span>Holding period</span>
+        <span>{{ data.holding_period }}</span>
+      </div>
+      <div class="big-item__content-info-item">
+        <span>Investment type</span>
+        <span>{{ data.type }}</span>
+      </div>
+      <div class="big-item__content-info-item">
+        <span>Expected return on equity</span>
+        <span>{{ data.expected_roi }}%</span>
+      </div>
+    </div>
+    <div class="big-item__content-button-block-wrapper">
+      <app-button-block></app-button-block>
+    </div>
+  </div>
+</div>

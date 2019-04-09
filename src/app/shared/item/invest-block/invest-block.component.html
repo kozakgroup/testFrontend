@@ -1,0 +1,11 @@
+<div class="invest-block d-flex flex-wrap">
+  <span class="invest-block__text text-left">Available to invest</span>
+  <span class="invest-block__text text-right" *ngIf="progress < 100">CHF {{ available | million }}</span>
+  <span class="invest-block__text text-right" *ngIf="progress === 100">COMPLETED</span>
+  <div class="progress-bar position-relative">
+    <span class="progress-bar__progress position-absolute"
+          [ngStyle]="{right: right + '%'}"
+          [ngClass]="{'progress-bar__progress_completed': progress === 100}">
+    </span>
+  </div>
+</div>

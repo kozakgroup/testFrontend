@@ -1,0 +1,34 @@
+@import "../../../../mixins";
+
+.button-block {
+  @include allCenter;
+  height: 100%;
+
+  &__btn {
+    @include font-size(11px);
+    cursor: pointer;
+    width: 13.5vw;
+    min-width: 140px;
+    height: 3vw;
+    min-height: 32px;
+    border: none;
+    outline: none;
+    color: white;
+    text-transform: uppercase;
+
+    &_details {
+      background-color: #ef7b31;
+    }
+
+    &_pre {
+      background-color: #50b83c;
+    }
+
+    &_completed {
+      color: #50b83c;
+      background-color: transparent;
+      border: 1px solid #57cda6;
+      text-transform: unset;
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../../mixins";
+
+.big-item {
+  height: 26vw;
+  min-height: 250px;
+
+  &__image {
+    height: 100%;
+    width: 50%;
+  }
+
+  &__content {
+    background-color: white;
+
+    &-header {
+      height: 5vw;
+      background-color: #1f2d3d;
+      padding-left: 13px;
+
+      h4 {
+        @include font-size(16px);
+        color: white;
+      }
+
+      span {
+        @include font-size(12px);
+        color: #788797;
+      }
+    }
+
+    &-invest-block-wrapper {
+      height: 5vw;
+      padding: 10px 21px 6px;
+    }
+
+    &-info {
+      height: 11vw;
+      padding: 0 18px 0 14px;
+
+      &-item {
+        @include alignEnd;
+        justify-content: space-between;
+        width: 46%;
+        border-bottom: 1px solid #f6f8fc;
+        padding: 0 12px 14px;
+
+        span {
+          @include font-size(11px);
+        }
+      }
+    }
+
+    &-button-block-wrapper {
+      height: 4vw;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    height: auto;
+    flex-direction: column;
+
+    &__image {
+      object-fit: contain;
+      width: 100%;
+    }
+
+    &__content {
+      &-header {
+        min-height: 60px;
+      }
+      &-invest-block-wrapper {
+        min-height: 60px;
+      }
+      &-info {
+        min-height: 150px;
+      }
+      &-button-block-wrapper {
+        min-height: 80px;
+      }
+    }
+  }
+}

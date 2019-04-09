@@ -1,0 +1,8 @@
+<div class="content">
+  <app-big-item [data]="mockBigItem"></app-big-item>
+
+  <div class="content__small-items-wrapper">
+    <app-small-item *ngFor="let item of mockSmallItems" [data]="item"></app-small-item>
+    <app-small-item *ngFor="let item of itemsFromApi" [data]="item"></app-small-item>
+  </div>
+</div>

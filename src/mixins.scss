@@ -1,0 +1,38 @@
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin allCenter {
+  @include flexbox;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin alignCenter {
+  @include flexbox;
+  align-items: center;
+}
+
+@mixin alignEnd {
+  @include flexbox;
+  align-items: flex-end;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: ($size / 16px) * 1rem;
+}
+
+@mixin heightMinMax($height, $min, $max) {
+  height: $height;
+  @if $min {
+    min-height: $min;
+  }
+  @if $max {
+    max-height: $max;
+  }
+}

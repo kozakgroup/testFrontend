@@ -1,0 +1,31 @@
+@import "../../../../mixins";
+
+.invest-block {
+  height: 100%;
+  border-bottom: 1px solid #f6f8fc;
+
+  &__text {
+    @include font-size(14px);
+    flex: 1;
+    height: max-content;
+  }
+
+  .progress-bar {
+    width: 100%;
+    background-color: #fceee4;
+    border-radius: 10px;
+    height: 5px;
+
+    &__progress {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 10px;
+      background-color: #f2a856;
+
+      &_completed {
+        background: linear-gradient(to right, #429613, #b0eb57);
+      }
+    }
+  }
+}

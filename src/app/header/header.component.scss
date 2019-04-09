@@ -1,0 +1,117 @@
+@import "../../mixins";
+@import "../../variables";
+
+.header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $header-height;
+  background-color: white;
+  padding: 0 12px 0 16px;
+
+  &__sidebar-btn {
+    @include font-size(34px);
+    cursor: pointer;
+    top: 5px;
+    left: 5px;
+    display: none;
+    background-color: transparent;
+    color: #cdcfd4;
+  }
+
+  &__title {
+    color: #cdcfd4;
+
+    i {
+      @include font-size(18px);
+    }
+
+    span {
+      letter-spacing: 0.3px;
+      margin-left: 10px;
+    }
+  }
+
+  &__menu {
+    padding-right: 0;
+    padding-left: 36px;
+    &-wrapper {
+      min-width: 250px;
+
+      .user-block {
+        cursor: pointer;
+
+        &__avatar {
+          @include allCenter;
+          background-color: #1e2b3b;
+          border-radius: 100%;
+          width: 20px;
+          height: 20px;
+
+          i {
+            @include font-size(12px);
+            color: white;
+          }
+        }
+
+        &__username {
+          @include font-size(11px);
+          margin-left: 5px;
+        }
+
+        &__arrow {
+          @include font-size(18px);
+        }
+
+      }
+    }
+
+    &-item {
+      cursor: pointer;
+      display: flex;
+
+      i {
+        @include font-size(15px);
+      }
+
+      &:first-child i {
+        @include font-size(13px)
+      }
+
+      &-notifications {
+        top: -6px;
+        right: -6px;
+        background-color: #ef7830;
+        width: auto;
+        padding: 2px;
+        height: 14px;
+
+        span {
+          @include font-size(9px);
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1100px) {
+    &__sidebar-btn {
+      display: block;
+    }
+
+    &__title {
+      margin-left: 50px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    flex-direction: column;
+    height: 65px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+    &__title {
+      margin-left: 0;
+    }
+  }
+}

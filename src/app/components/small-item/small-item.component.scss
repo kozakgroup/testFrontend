@@ -1,0 +1,103 @@
+@import "../../../mixins";
+
+.ribbon {
+  position: absolute;
+  left: -6px;
+  top: -5px;
+  z-index: 2;
+  overflow: hidden;
+  width: 75px; height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 8px;
+  font-weight: bold;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 75px;
+  display: block;
+  background: #79A70A;
+  background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 10px;
+  left: -17px;
+}
+.ribbon span::after {
+  content: "";
+  position: absolute; right: 0px; top: 100%;
+  z-index: -1;
+  border: 3px solid #79A70A;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.small-item {
+  background-color: white;
+
+  &__header {
+    z-index: 1;
+    padding: 12px 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5vw;
+    min-height: 60px;
+    background-color: #1f2d3d;
+
+    h4 {
+      @include font-size(14px);
+      letter-spacing: 0.5px;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    span {
+      @include font-size(11px);
+      text-transform: uppercase;
+      color: #626f84;
+    }
+  }
+
+  &__logo {
+    height: 16vw;
+    min-height: 180px;
+  }
+
+  &__invest-block-wrapper {
+    height: 5vw;
+    min-height: 60px;
+    padding: 8px 10px 10px;
+  }
+
+  &__info {
+    height: 16vw;
+    min-height: 170px;
+
+    &-item {
+      @include font-size(12px);
+      @include alignCenter;
+      justify-content: space-between;
+      padding: 0 16px;
+      border-bottom: 1px solid #f6f8fc;
+      flex: 1;
+    }
+  }
+
+  &__button-block-wrapper {
+    height: 5vw;
+    min-height: 60px;
+  }
+
+  @media screen and (max-width: 576px){
+    &__logo {
+      height: 58vw;
+    }
+  }
+}
+
+

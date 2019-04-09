@@ -1,0 +1,25 @@
+<div class="header d-flex align-items-center position-absolute justify-content-between">
+  <i class="header__sidebar-btn position-absolute material-icons" (click)="handleSidebar()">dehaze</i>
+  <div class="header__title d-flex align-items-center">
+    <i class="material-icons">business</i>
+    <span>Offerings</span>
+  </div>
+  <div class="header__menu-wrapper row pt-md-1">
+    <div class="header__menu col-5 d-flex align-items-center justify-content-between">
+      <div class="header__menu-item position-relative" *ngFor="let item of menuData">
+        <i class="material-icons">{{ item.icon }}</i>
+        <div class="header__menu-item-notifications position-absolute
+        d-flex align-items-center justify-content-center" *ngIf="item.notificationsCount">
+          <span>{{ item.notificationsCount }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="user-block col-7 d-flex align-items-center justify-content-between">
+      <div class="user-block__avatar d-flex justify-content-center align-items-center">
+        <i class="material-icons">person</i>
+      </div>
+      <span class="user-block__username">James Tortis</span>
+      <i class="user-block__arrow material-icons">arrow_drop_down</i>
+    </div>
+  </div>
+</div>

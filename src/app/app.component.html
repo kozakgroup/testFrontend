@@ -1,0 +1,7 @@
+<div class="main-wrapper d-flex position-relative">
+  <app-sidebar [(show)]="show"></app-sidebar>
+  <div class="main-container position-relative d-flex">
+    <app-header (showSidebar)="showSidebar($event)"></app-header>
+    <app-content></app-content>
+  </div>
+</div>

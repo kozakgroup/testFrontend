@@ -1,0 +1,23 @@
+@import "../variables";
+
+.main-wrapper {
+  .main-container {
+    width: calc(100% - #{$sidebar-width});
+    background-color: #f6f7fc;
+    padding: $header-height + 28px 25px 25px;
+    min-height: 100vh;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .main-container {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .main-container {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

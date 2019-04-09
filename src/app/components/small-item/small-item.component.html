@@ -1,0 +1,40 @@
+<div class="small-item d-flex flex-column position-relative">
+  <div class="ribbon" *ngIf="getProgress() === 100"><span>FINANCE</span></div>
+  <div class="small-item__header d-flex align-items-center flex-column justify-content-between position-absolute">
+    <h4 class="m-0">{{ data.name }}</h4>
+    <span>{{ data.location.city + ', ' + data.location.canton }}</span>
+  </div>
+  <img [src]="getLogo()" class="small-item__logo" />
+  <div class="small-item__invest-block-wrapper">
+    <app-invest-block [progress]="getProgress()" [available]="data.available_to_invest"></app-invest-block>
+  </div>
+  <div class="small-item__info d-flex flex-column">
+    <div class="small-item__info-item">
+      <span>Purchase cost</span>
+      <span>CHF {{ data.purchase_price | million }}</span>
+    </div>
+    <div class="small-item__info-item">
+      <span>Min. Investment</span>
+      <span>CHF {{ data.minimum_investment | million }}</span>
+    </div>
+    <div class="small-item__info-item">
+      <span>Investment Type</span>
+      <span>{{ data.type }}</span>
+    </div>
+    <div class="small-item__info-item">
+      <span>Mortage(LTV)</span>
+      <span>{{ data.loan_to_value }}%</span>
+    </div>
+    <div class="small-item__info-item">
+      <span>Holding Period</span>
+      <span>{{ data.holding_period }}</span>
+    </div>
+    <div class="small-item__info-item">
+      <span>Expected Return on Equity</span>
+      <span>{{ data.expected_roi }}%</span>
+    </div>
+  </div>
+  <div class="small-item__button-block-wrapper">
+    <app-button-block [radius]="4" [type]="getButtonType"></app-button-block>
+  </div>
+</div>
